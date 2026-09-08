@@ -1,15 +1,21 @@
+import os
 import sqlite3
 import pandas as pd
 import streamlit as st
+import altair as alt
+
+from src.load import load_data
+
+DATABASE = "data/nhl.db"
+
+if not os.path.exists(DATABASE):
+    load_data()
+
 from src.similarity import (
     find_similar_players,
     get_player_stats,
     get_position_percentiles
 )
-import altair as alt
-
-
-DATABASE = "data/nhl.db"
 
 
 # -------------------------

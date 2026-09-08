@@ -1,13 +1,15 @@
+import os
 import sqlite3
 
-from extract_nhl import get_skater_summary
-
+from src.extract_nhl import get_skater_summary
 
 DATABASE = "data/nhl.db"
 SEASON = 20252026
 
 
 def load_data():
+    os.makedirs("data", exist_ok=True)
+
     df = get_skater_summary(SEASON)
 
     df = df.rename(columns={
