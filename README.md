@@ -6,6 +6,10 @@ The project collects NHL skater statistics, stores the data in a SQLite database
 
 The results are displayed in an interactive Streamlit application where users can select a player, view their closest statistical matches, and compare their statistical profiles.
 
+## Live App
+
+[Open the NHL Player Similarity Explorer](https://nhl-player-similarity.streamlit.app)
+
 ## How It Works
 
 1. NHL skater statistics are retrieved from the NHL API.
@@ -60,15 +64,16 @@ NHL-Player-Similarity/
 
 ## Running the Project
 
-Create and activate a Python virtual environment, install the dependencies, load the NHL data, and start the Streamlit application.
+Clone the repository and create a virtual environment:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python src/load.py
 streamlit run app.py
 ```
+
+On the first run, the application automatically downloads the NHL skater data and creates the local SQLite database.
 
 Then open the local Streamlit URL shown in the terminal.
 

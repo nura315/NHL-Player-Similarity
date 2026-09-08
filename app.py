@@ -140,7 +140,7 @@ results_display = results_df[
 st.dataframe(
     results_display,
     hide_index=True,
-    use_container_width=True
+    width="stretch"
 )
 
 
@@ -213,7 +213,7 @@ comparison_df[
 st.dataframe(
     comparison_df,
     hide_index=True,
-    use_container_width=True
+    width="stretch"
 )
 
 
@@ -307,5 +307,5 @@ chart = alt.Chart(chart_data).mark_bar().encode(
 
 st.altair_chart(
     chart,
-    use_container_width=True
+    width="stretch"
 )
